@@ -13,7 +13,9 @@
                     <Setter Property="Control.FontFamily" Value="Trebuchet MS"/>
                     <Setter Property="Control.FontSize" Value="21"/>
                 </Style>
-                <Style TargetType="TreeViewItem" BasedOn="{StaticResource baseFont}"/>
+                <Style TargetType="TreeViewItem" BasedOn="{StaticResource baseFont}">
+                    <Setter Property="Width" Value="20"/>
+                </Style>
             </StackPanel.Resources>
             <TreeView>
                 <TreeViewItem Header="Салаты">
