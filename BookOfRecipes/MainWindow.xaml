@@ -1,0 +1,40 @@
+﻿<Window x:Class="BookOfRecipes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookOfRecipes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style x:Key="baseFont">
+                    <Setter Property="Control.FontFamily" Value="Trebuchet MS"/>
+                    <Setter Property="Control.FontSize" Value="21"/>
+                </Style>
+                <Style TargetType="TreeViewItem" BasedOn="{StaticResource baseFont}"/>
+            </StackPanel.Resources>
+            <TreeView>
+                <TreeViewItem Header="Салаты">
+                    <TreeViewItem Header="Салат Цезарь" />
+                    <TreeViewItem Header="Салат из крабовых палочек" />
+                    <TreeViewItem Header="Оливье" />
+                    <TreeViewItem Header="Салат Мимоза" />
+                </TreeViewItem>
+                <TreeViewItem Header="Горячие блюда" >
+                    <TreeViewItem Header="Курица в духовке">
+                        <TreeViewItem Header="Мясо в духовке"/>
+                        <TreeViewItem Header="Рыба в духовке"/>
+                        <TreeViewItem Header="Макароны в духовке"/>
+                    </TreeViewItem>
+                    <TreeViewItem Header="Холодные блюда">
+                        <TreeViewItem Header="Закуска из лаваша" />
+                        <TreeViewItem Header="Роллы из огурцов" />
+                        <TreeViewItem Header="Помидоры по-итальянски" />
+                    </TreeViewItem>
+                </TreeViewItem>
+            </TreeView>
+        </StackPanel>
+    </Grid>
+</Window>

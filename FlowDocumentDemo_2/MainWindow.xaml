@@ -1,0 +1,225 @@
+﻿<Window x:Class="FlowDocumentDemo_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlowDocumentDemo_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style x:Key="baseFont">
+                    <Setter Property="Control.FontFamily" Value="Trebuchet MS"/>
+                    <Setter Property="Control.FontSize" Value="21"/>
+                </Style>
+                <Style TargetType="Expander" BasedOn="{StaticResource baseFont}"/>
+                <Style TargetType="Paragraph" BasedOn="{StaticResource baseFont}">
+                    <Setter Property="TextIndent" Value="30"/>
+                </Style>
+                <Style TargetType="Table">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                </Style>
+                <Style TargetType="TableCell">
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="Padding" Value="10"/>
+                </Style>
+            </StackPanel.Resources>
+            <Expander Header="Форматирование текста">
+                <FlowDocumentReader>
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run>Обычный шрифт</Run>
+                        </Paragraph>
+                        <Paragraph>
+                            <Bold>Полужирный шрифт</Bold>
+                        </Paragraph>
+                        <Paragraph>
+                            <Italic>Наклонный шрифт</Italic>
+                        </Paragraph>
+                        <Paragraph>
+                            <Underline>Подчеркнутый шрифт</Underline>
+                        </Paragraph>
+                        <Paragraph>
+                            <Span Foreground="Red">Выделенный шрифт</Span>
+                        </Paragraph>
+                        <Section Foreground="Navy">
+                        <Paragraph>
+                            Все пингвины умеют плавать и превосходно ныряют, а вот летать совершенно не могут.
+                        </Paragraph>
+                        <Paragraph>
+                            Клюв пингвина сильный и очень острый.
+                        </Paragraph>
+                        </Section>
+                        <Paragraph>
+                            Тело пингвина довольно упитанное, чуть сжатое с боков и покрыто перьями.
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentReader>
+            </Expander>
+            <Expander Header="Создание списков">
+                <FlowDocumentReader>
+                    <FlowDocument>
+                        <Paragraph FontSize="24">Список студентов</Paragraph>
+                        <List MarkerStyle="LowerLatin">
+                            <ListItem>
+                                <Paragraph>
+                                    Иванов
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    Петров
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    Литвинчик
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    Хаас
+                                </Paragraph>
+                            </ListItem>
+                        </List>
+                    </FlowDocument>
+                </FlowDocumentReader>
+            </Expander>
+            <Expander Header="Создание таблиц">
+                <FlowDocumentReader>
+                    <FlowDocument >
+                        <Paragraph FontSize="24" Foreground="Red">Языки программирования</Paragraph>
+                        <Table>
+                            <TableRowGroup>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph>№</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>Название</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>Год</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+                        <Table>
+                            <TableRowGroup>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph>1</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>Fortran</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>1957</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+                        <Table>
+                            <TableRowGroup>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph>2</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>Basic</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>1964</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+                        <Table>
+                            <TableRowGroup>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph>3</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>Pascal</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>1969</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+                        <Table>
+                            <TableRowGroup>
+                                <TableRow>
+                                    <TableCell>
+                                        <Paragraph>4</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>C</Paragraph>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Paragraph>1972</Paragraph>
+                                    </TableCell>
+                                </TableRow>
+                            </TableRowGroup>
+                        </Table>
+                    </FlowDocument>
+                </FlowDocumentReader>
+            </Expander>
+            <Expander Header="Гиперссылки">
+                <FlowDocumentPageViewer>
+                    <FlowDocument>
+                        <Paragraph>
+                            <Hyperlink NavigateUri="http://www.google.com.ua"
+                                       RequestNavigate="Hyperlink_RequestNavigate">
+                                Google</Hyperlink>
+                        </Paragraph>
+                        <Paragraph>
+                            <Hyperlink NavigateUri="http://www.ukr.net"
+                                       RequestNavigate="Hyperlink_RequestNavigate_1">
+                                Ukr net</Hyperlink>
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentPageViewer>
+            </Expander>
+            <Expander Header="Плавающие панели">
+                <FlowDocumentReader>
+                    <FlowDocument>
+                        <Paragraph>
+                            <Figure VerticalAnchor="ContentTop" HorizontalAnchor="ColumnLeft">
+                                <Paragraph>
+                                    <Image Source="Images/logo.jpg" Width="100"/>
+                                </Paragraph>
+                            </Figure>
+                            Все пингвины умеют плавать и превосходно ныряют, а вот летать совершенно не могут.
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentReader>
+            </Expander>
+            <Expander Header="Интерактивные панели">
+                <FlowDocumentReader>
+                    <FlowDocument>
+                        <Paragraph>
+                                Все пингвины умеют плавать и превосходно ныряют,
+                            <LineBreak/>
+                            <InlineUIContainer >
+                                <StackPanel>
+                                <Label Content="Ваше имя "/>
+                                    <TextBox x:Name="User"/>
+                                    <Button x:Name="start" Content="Start"
+                                            Click="start_Click"></Button>
+                                </StackPanel>
+                            </InlineUIContainer>
+                            <LineBreak/>
+                            а вот летать совершенно не могут.
+                        </Paragraph>
+                    </FlowDocument>
+                </FlowDocumentReader>
+            </Expander>
+        </StackPanel>
+    </Grid>
+</Window>
